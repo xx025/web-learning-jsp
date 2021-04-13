@@ -2,6 +2,7 @@ package com.lddx.test;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Random;
 
 public class TestHashSet {
     public static void main(String[] args) {
@@ -43,6 +44,23 @@ public class TestHashSet {
         Iterator<String> it = hs.iterator();
         while (it.hasNext()) {
             System.out.println(it.next());
+        }
+
+        System.out.println("--------------");
+        //使用随机数产生四个不重复的验证码
+        Random r = new Random();
+        HashSet<Integer> hs1 = new HashSet<Integer>();
+        //int num = r.nextInt(100);
+        //System.out.println(num);
+
+        while (true) {
+            int num = r.nextInt(100);//0-100之间的随机数
+            hs1.add(num);
+            if (hs1.size() >= 4) {
+                System.out.println(hs1);
+                break;
+            }
+
         }
     }
 }
